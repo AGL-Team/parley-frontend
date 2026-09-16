@@ -1,7 +1,9 @@
 import { FiltersPanel, Header, OfferCard, Tag } from "../../shared/ui";
+import { useNavigate } from "react-router-dom";
 import styles from "./SearchPage.module.css";
 
 export function SearchPage() {
+  const navigate = useNavigate();
 	return (
 		<>
 			<Header />
@@ -20,10 +22,10 @@ export function SearchPage() {
 						</div>
 
 						<div className={styles.cards}>
-							<OfferCard />
-							<OfferCard />
-							<OfferCard />
-							<OfferCard />
+							<OfferCard title="title" description="description" onClick={() => navigate("/catalog")}/>
+							<OfferCard title="title" description="description" onClick={() => navigate("/catalog")}/>
+							<OfferCard title="title" description="description" onClick={() => navigate("/catalog")}/>
+							<OfferCard title="title" description="description" onClick={() => navigate("/catalog")}/>
 						</div>
 					</section>
 				</div>

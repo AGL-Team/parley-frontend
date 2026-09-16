@@ -1,11 +1,17 @@
 import styles from "./OfferCard.module.css";
 
-export function OfferCard() {
+type CardProps = {
+  title: string;
+  description: string;
+  onClick: () => void;
+};
+
+export function OfferCard({ title, description, onClick }: CardProps) {
 	return (
-		<article className={styles.card}>
+		<article className={styles.card} onClick={onClick}>
 			<div className={styles.image}>Изображение</div>
-			<h2 className={styles.title}>Название предложения</h2>
-			<p className={styles.description}>Краткое описание предложения</p>
+			<h2 className={styles.title}> {title} </h2>
+			<p className={styles.description}> {description} </p>
 			<div className={styles.meta}>Дополнительная информация</div>
 		</article>
 	);
