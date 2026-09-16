@@ -1,3 +1,5 @@
+import { Header } from "../../shared/ui";
+
 export function IndexPage() {
-	return <h1>Index page</h1>;
+	return <Header />;
 }
