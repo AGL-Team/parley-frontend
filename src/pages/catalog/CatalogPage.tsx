@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { FiltersPanel, Header, OfferCard, Tag } from "../../shared/ui";
 import styles from "./CatalogPage.module.css";
 
 export function CatalogPage() {
+	const navigate = useNavigate();
+
 	return (
 		<>
 			<div className={styles.companyHeader}>
@@ -38,18 +41,22 @@ export function CatalogPage() {
 							<OfferCard
 								title="Название предложения"
 								description="Краткое описание предложения"
+								onClick={() => navigate("/chat")}
 							/>
 							<OfferCard
 								title="Название предложения"
 								description="Краткое описание предложения"
+								onClick={() => navigate("/chat")}
 							/>
 							<OfferCard
 								title="Название предложения"
 								description="Краткое описание предложения"
+								onClick={() => navigate("/chat")}
 							/>
 							<OfferCard
 								title="Название предложения"
 								description="Краткое описание предложения"
+								onClick={() => navigate("/chat")}
 							/>
 						</div>
 					</section>
