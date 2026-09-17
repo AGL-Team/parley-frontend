@@ -31,7 +31,7 @@ export function SearchPage() {
 									<path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5" />
 								</svg>
 							</button>
-							
+
 							<button
 								className={`${styles.iconButton} ${styles.searchButton}`}
 								type="button"
@@ -93,6 +93,23 @@ export function SearchPage() {
 								Подобрал предложения с пробным периодом. Их можно сравнить по
 								стоимости, набору интеграций и сроку внедрения.
 							</div>
+						</div>
+
+						<div className={styles.historyComposer}>
+							<input
+								type="text"
+								placeholder="Уточните запрос или задайте вопрос"
+								aria-label="Сообщение AI-агенту"
+							/>
+							<button
+								type="button"
+								aria-label="Отправить сообщение"
+								title="Отправить"
+							>
+								<svg viewBox="0 0 24 24" aria-hidden="true">
+									<path d="m5 12 14-7-4 14-3-6-7-1Z" />
+								</svg>
+							</button>
 						</div>
 					</div>
 				</section>

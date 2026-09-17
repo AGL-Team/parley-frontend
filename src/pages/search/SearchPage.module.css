@@ -90,7 +90,7 @@
 
 .historyPopup:popover-open {
 	display: grid;
-	grid-template-rows: auto minmax(0, 1fr);
+	grid-template-rows: auto minmax(0, 1fr) auto;
 }
 
 .historyPopup::backdrop {
@@ -147,6 +147,58 @@
 	border: 1px solid #e5e7eb;
 	border-bottom-left-radius: 4px;
 	background: #ffffff;
+}
+
+.historyComposer {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	gap: 10px;
+	padding: 16px 20px;
+	border-top: 1px solid #e5e7eb;
+	background: #ffffff;
+}
+
+.historyComposer input {
+	box-sizing: border-box;
+	width: 100%;
+	height: 48px;
+	padding: 0 15px;
+	border: 1px solid #d1d5db;
+	border-radius: 12px;
+	color: #111827;
+	font: inherit;
+}
+
+.historyComposer input:focus {
+	border-color: #6b7280;
+	outline: 2px solid rgba(75, 85, 99, 0.16);
+}
+
+.historyComposer button {
+	display: grid;
+	place-items: center;
+	width: 48px;
+	height: 48px;
+	padding: 0;
+	border: 0;
+	border-radius: 12px;
+	background: #111827;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.historyComposer button:hover {
+	background: #374151;
+}
+
+.historyComposer svg {
+	width: 20px;
+	height: 20px;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
 }
 
 .content {
