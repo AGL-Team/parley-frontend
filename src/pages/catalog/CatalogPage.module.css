@@ -1,0 +1,107 @@
+.companyHeader {
+	background: #e5e7eb;
+}
+
+.companyIntro {
+	display: flex;
+	align-items: center;
+	gap: 28px;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 48px 32px 56px;
+}
+
+.companyLogo {
+	display: grid;
+	flex: 0 0 152px;
+	place-items: center;
+	height: 152px;
+	border: 1px dashed #9ca3af;
+	border-radius: 16px;
+	background: #d1d5db;
+	color: #6b7280;
+	font-size: 14px;
+	text-align: center;
+}
+
+.companyInfo {
+	max-width: 680px;
+}
+
+.companyName {
+	margin: 16px 0 12px;
+	font-size: 40px;
+	line-height: 1.1;
+}
+
+.companyDescription {
+	margin: 0;
+	color: #4b5563;
+	font-size: 17px;
+	line-height: 1.6;
+}
+
+.page {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 40px 32px;
+}
+
+.title {
+	margin: 0 0 32px;
+	font-size: 32px;
+}
+
+.content {
+	display: grid;
+	grid-template-columns: 240px minmax(0, 1fr);
+	gap: 32px;
+}
+
+.results {
+	min-width: 0;
+}
+
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 20px;
+}
+
+.cards {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px;
+}
+
+@media (max-width: 760px) {
+	.companyIntro {
+		align-items: flex-start;
+		padding: 32px 16px 40px;
+	}
+
+	.companyLogo {
+		flex-basis: 96px;
+		height: 96px;
+	}
+
+	.companyName {
+		font-size: 30px;
+	}
+
+	.page {
+		padding: 32px 16px;
+	}
+
+	.content,
+	.cards {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 520px) {
+	.companyIntro {
+		flex-direction: column;
+	}
+}
