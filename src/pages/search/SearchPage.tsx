@@ -1,9 +1,12 @@
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiltersPanel, Header, OfferCard, Tag } from "../../shared/ui";
 import styles from "./SearchPage.module.css";
 
 export function SearchPage() {
 	const navigate = useNavigate();
+	const historyDialogRef = useRef<HTMLDialogElement>(null);
+
 	return (
 		<>
 			<Header />
@@ -22,8 +25,7 @@ export function SearchPage() {
 							<button
 								className={styles.iconButton}
 								type="button"
-								popoverTarget="search-history"
-								popoverTargetAction="toggle"
+								onClick={() => historyDialogRef.current?.showModal()}
 								aria-label="Развернуть историю сообщений"
 								title="Расширить"
 							>
@@ -46,21 +48,30 @@ export function SearchPage() {
 						</div>
 					</div>
 
-					<div
-						id="search-history"
+					<dialog
+						ref={historyDialogRef}
 						className={styles.historyPopup}
-						popover="auto"
+						aria-labelledby="search-history-title"
+						onClick={(event) => {
+							if (event.target === event.currentTarget) {
+								event.currentTarget.close();
+							}
+						}}
+						onKeyDown={(event) => {
+							if (event.key === "Escape") {
+								event.currentTarget.close();
+							}
+						}}
 					>
 						<header className={styles.historyHeader}>
 							<div>
-								<h2>История поиска</h2>
+								<h2 id="search-history-title">История поиска</h2>
 								<p>Диалог с AI-агентом по подбору предложений</p>
 							</div>
 							<button
 								className={styles.closeButton}
 								type="button"
-								popoverTarget="search-history"
-								popoverTargetAction="hide"
+								onClick={() => historyDialogRef.current?.close()}
 								aria-label="Закрыть историю"
 							>
 								<svg viewBox="0 0 24 24" aria-hidden="true">
@@ -111,7 +122,7 @@ export function SearchPage() {
 								</svg>
 							</button>
 						</div>
-					</div>
+					</dialog>
 				</section>
 
 				<div className={styles.content}>

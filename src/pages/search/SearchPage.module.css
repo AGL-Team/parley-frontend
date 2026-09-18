@@ -76,19 +76,24 @@
 }
 
 .historyPopup {
+	position: fixed;
+	inset: 0;
 	box-sizing: border-box;
 	width: min(900px, calc(100vw - 48px));
 	height: min(720px, calc(100vh - 64px));
+	max-width: none;
+	max-height: none;
 	margin: auto;
 	padding: 0;
 	overflow: hidden;
 	border: 1px solid #d1d5db;
 	border-radius: 20px;
 	background: #ffffff;
+	color: #111827;
 	box-shadow: 0 24px 70px rgba(17, 24, 39, 0.28);
 }
 
-.historyPopup:popover-open {
+.historyPopup[open] {
 	display: grid;
 	grid-template-rows: auto minmax(0, 1fr) auto;
 }
