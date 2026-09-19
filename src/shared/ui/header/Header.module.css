@@ -63,6 +63,51 @@
 	background: #374151;
 }
 
+.authStatus {
+	color: #6b7280;
+	font-size: 14px;
+}
+
+.userPanel {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 6px 10px;
+	border: 1px solid #d1d5db;
+	border-radius: 10px;
+	background: #ffffff;
+}
+
+.avatar {
+	display: grid;
+	place-items: center;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	background: #d1d5db;
+	color: #374151;
+	font-weight: 700;
+}
+
+.userDetails {
+	display: grid;
+	gap: 2px;
+	line-height: 1.1;
+}
+
+.userDetails strong {
+	max-width: 180px;
+	overflow: hidden;
+	font-size: 14px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.userDetails small {
+	color: #6b7280;
+	font-size: 12px;
+}
+
 @media (max-width: 600px) {
 	.header {
 		padding: 0 16px;
@@ -73,6 +118,10 @@
 	}
 
 	.name {
+		display: none;
+	}
+
+	.userDetails {
 		display: none;
 	}
 }

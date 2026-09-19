@@ -103,8 +103,22 @@
 	outline: 2px solid #e5e7eb;
 }
 
-.submitButton,
-.googleButton {
+.field input:disabled {
+	background: #f3f4f6;
+	cursor: not-allowed;
+}
+
+.formError {
+	margin: 0;
+	padding: 12px 14px;
+	border: 1px solid #fecaca;
+	border-radius: 8px;
+	background: #fef2f2;
+	color: #b91c1c;
+	font-size: 14px;
+}
+
+.submitButton {
 	min-height: 48px;
 	border-radius: 8px;
 	font: inherit;
@@ -118,51 +132,30 @@
 	color: #ffffff;
 }
 
-.divider {
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	margin: 24px 0;
-	color: #9ca3af;
-	font-size: 14px;
-}
-
-.divider::before,
-.divider::after {
-	content: "";
-	flex: 1;
-	height: 1px;
-	background: #e5e7eb;
-}
-
-.googleButton {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 10px;
-	width: 100%;
-	border: 1px solid #d1d5db;
-	background: #ffffff;
-	color: #111827;
-}
-
-.googleIcon {
-	display: grid;
-	place-items: center;
-	width: 22px;
-	height: 22px;
-	border-radius: 50%;
-	background: #e5e7eb;
-	font-size: 12px;
-	font-weight: 700;
-}
-
 .submitButton:hover {
 	background: #374151;
 }
 
-.googleButton:hover {
-	background: #f9fafb;
+.submitButton:disabled {
+	background: #6b7280;
+	cursor: wait;
+}
+
+.switchPrompt {
+	margin: 24px 0 0;
+	color: #6b7280;
+	font-size: 14px;
+	text-align: center;
+}
+
+.switchPrompt a {
+	color: #111827;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.switchPrompt a:hover {
+	text-decoration: underline;
 }
 
 @media (max-width: 760px) {

@@ -1,9 +1,10 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import {
-	AuthPage,
 	CatalogPage,
 	ChatPage,
 	IndexPage,
+	LoginPage,
+	RegistrationPage,
 	SearchPage,
 } from "../../pages";
 
@@ -17,8 +18,16 @@ export const router = createBrowserRouter([
 		element: <CatalogPage />,
 	},
 	{
+		path: "/login",
+		element: <LoginPage />,
+	},
+	{
+		path: "/registration",
+		element: <RegistrationPage />,
+	},
+	{
 		path: "/auth",
-		element: <AuthPage />,
+		element: <Navigate replace to="/login" />,
 	},
 	{
 		path: "/chat",
